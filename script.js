@@ -63,7 +63,7 @@ multiStepForm.addEventListener("submit", (e) => {
       discount: wheel.getCurrentWord(),
     };
     console.log("data", data);
-    wellDone(data);
+    uploadData(data);
   }, 3000);
 });
 
@@ -72,4 +72,22 @@ function wellDone(data) {
   let h2 = document.createElement("h2");
   h2.textContent = `Weel done ${data.name}! we'll send at ${data.email} a discount coupon of ${data.discount}. Bye!`;
   finish.appendChild(h2);
+}
+
+function uploadData(data) {
+  const scriptURL = "link to for google sheets";
+  var form_data = new FormData();
+
+  for (var key in data) {
+    form_data.append(key, data[key]);
+  }
+  console.log("new FormData:", form_data);
+  fetch(scriptURL, { method: "POST", body: form_data })
+    .then((response) => {
+      console.log(response);
+      wellDone(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
