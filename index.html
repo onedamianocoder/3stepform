@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="wheel/style.css" />
+    <script src="wheel/two.min5.js"></script>
+    <script src="wheel/script.js" defer></script>
+  </head>
+  <body>
+    <form data-multi-step class="multi-step-form">
+      <div data-step class="card">
+        <h3 class="step-title">This is step 1</h3>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label for="phone">Phone</label>
+          <input type="text" name="phone" id="phone" />
+          <button type="button" data-next>Next</button>
+        </div>
+      </div>
+      <div data-step class="card">
+        <h3 class="step-title">This is step 2</h3>
+        <div class="form-group">
+          <button type="button">FBLike</button>
+          <button type="button" data-previous>Prev</button>
+          <button type="button" data-next>Next</button>
+        </div>
+      </div>
+      <div data-step class="card">
+        <h3 class="step-title">Spin the wheel!</h3>
+        <div class="mount">
+          <div class="js-mount"></div>
+        </div>
+        <div>
+          <textarea
+            name="js-words"
+            id="parole"
+            cols="30"
+            rows="3"
+            class="js-words hide"
+          >
+5% 10% 15% 8% 7%</textarea
+          >
+          <button type="button" class="js-get-word hide">
+            Get current word:
+          </button>
+          <!-- <input type="button" value="get last word: " class="js-get-word" /> -->
+          <input type="button" value="Spin" class="js-spin hide" />
+        </div>
+        <button type="button" data-previous>Prev</button>
+        <button type="submit">Spin</button>
+      </div>
+    </form>
+    <div class="finish" id="finish"></div>
+  </body>
+</html>
